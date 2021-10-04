@@ -1,0 +1,1367 @@
+@import './normalize.css/normalize';
+@font-face {
+     font-family: 'Work Sans Regular';
+     src: url('../fonts/WorkSans-Regular.ttf')format("truetype");
+    }
+@font-face {
+    font-family: 'Work Sans Bold';
+    src: url('../fonts/WorkSans-ExtraBold.ttf')format("truetype");
+    }
+
+
+$main-font-family: 'Work Sans Regular', sans-serif;
+$bold-font-family: 'Work Sans Bold', sans-serif;
+$primary-bg-color: #fff;
+$secondary-bg-color: #fafafa;
+$title-bg-color: #f6f6f6;
+$accent-color: #10cab7;
+$primary-txt-color: #2c4755;
+$basic-txt-color: #575757;
+$info-title-txt-color: #1f2021;
+$info-txt-color: #4d4c4c;
+$social-txt-color: #334752;
+$menu-title-color: #637988;
+
+$for-xx-large-devices: 1679px;
+$for-x-large-devices: 1399px;
+$for-large-devices: 1199px;
+$for-medium-devices: 991px;
+$for-small-devices: 767px;
+$for-x-small-devices: 575px;
+$for-landscape-devices: 500px;
+
+%bold-font {
+    font-family: $bold-font-family;
+    font-weight: 800;
+    margin: 0;
+}
+
+%regular-font {
+    font-family: $main-font-family;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -1px;
+    margin: 0;
+    @media screen and (max-width: $for-x-large-devices) {
+        font-size: 13px;
+    }
+    @media screen and (max-width: $for-large-devices) {
+        font-size: 12px;
+    }
+    @media screen and (max-width: $for-small-devices) {
+        font-size: 10px;
+    }
+}
+
+%image-param {
+    width: inherit;
+    height: inherit;
+}
+
+// ========= MODULES ==========
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    background-color: $primary-bg-color;
+    max-width: 1920px;
+}
+
+.section-header {
+    text-align: center;
+    position: relative;
+
+    &__name {
+        @extend %bold-font;
+        font-size: 162px;
+        letter-spacing: -8px;
+        color: $title-bg-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 140px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 120px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 90px;
+        }
+    }
+
+    &__tagline {
+        @extend %regular-font;
+        position: absolute;
+        z-index: 10;
+        font-size: 25px;
+        color: $basic-txt-color;
+        top: 132px;
+        width: 100%;
+        text-align: center;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 20px;
+            top: 110px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 18px;
+            top: 95px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 16px;
+            top: 70px;
+        }
+    }
+}
+
+//============ HEADER ==============
+
+.header-container {
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 90px;
+    padding: 0 20% 0 20%;
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 70px;
+    }
+}
+
+.logo {
+    width: 40px;
+    height: 35px;
+    overflow: hidden;
+
+    &__image {
+        @extend %image-param;
+        object-fit: contain;
+    }
+}
+
+.menu {
+    position: relative;
+    cursor: pointer;
+    z-index: 200;
+
+    .menu__is-showing {
+        display: none;
+    }
+
+    .menu__burger-icon {
+        width: 28px;
+        height: 15px;
+        overflow: hidden;
+
+        .menu__icon_image {
+            @extend %image-param;
+            object-fit: contain;
+        }
+    }
+
+    .menu__closing-icon {
+        display: none;
+    }
+}
+
+.menu__not-showing-elem {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    right: 27%;
+    background-color: #ff1919;
+    opacity: 1;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        right: 26%;
+    }
+    @media screen and (max-width: $for-x-large-devices) {
+        right: 25%;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        right: 35%;
+        top: 30px;
+    }
+
+    @media screen and (max-width: $for-medium-devices) {
+        left: 30px;
+    }
+}
+
+.menu:hover {
+    background-color: $primary-txt-color;
+    width: 30%;
+    height: 100%;
+    z-index: 10;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top:0;
+    box-sizing: border-box;
+    padding-top: 40px;
+
+    @media screen and (max-width: $for-large-devices) {
+        width: 40%;
+    }
+
+    @media screen and (max-width: $for-medium-devices) {
+        width: 100%;
+    }
+
+    .menu__burger-icon {
+        display: none;
+    }
+
+    .menu__closing-icon {
+        display: block;
+        width: 28px;
+        height: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0 0 0 30px;
+
+        .menu__icon_image {
+            @extend %image-param;
+            object-fit: contain;
+        }
+    }
+
+    .menu__is-showing {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $primary-txt-color;
+        z-index: 50;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 30px 35px;
+        box-sizing: border-box;
+
+        @media screen and (max-height: $for-landscape-devices) {
+            padding: 5px 0 20px 35px;
+        }
+    }
+
+    .menu__nav__is-showing {
+        margin: 0 0 40px 0;
+
+        @media screen and (max-width: $for-small-devices) {
+            margin: 0 0 20px 0;
+        }
+
+        @media screen and (max-height: $for-landscape-devices) {
+            margin: 0 0 5px 0;
+        }
+    }
+
+    .menu__nav-list-item__is-showing {
+        list-style: none;
+        margin-left: -40px;
+
+        a {
+            text-decoration: none;
+            @extend %regular-font;
+            font-size: 29px;
+            color: $primary-bg-color;
+
+            @media screen and (max-width: $for-x-large-devices) {
+                font-size: 22px;
+            }
+
+            @media screen and (max-width: $for-large-devices) {
+                font-size: 22px;
+            }
+
+            @media screen and (max-width: $for-small-devices) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-height: $for-landscape-devices) {
+                font-size: 14px;
+                margin: 0 0 5px 0;
+            }
+        }
+
+        a:hover, a:active {
+            color: $accent-color;
+        }
+            
+    }
+
+    .menu__contact__is-showing {
+        margin: 0 0 40px 0;
+
+        @media screen and (max-width: $for-small-devices) {
+            margin: 0 0 20px 0;
+        }
+        @media screen and (max-height: $for-landscape-devices) {
+            margin: 0 0 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            @extend %regular-font;
+            font-size: 29px;
+            color: $primary-bg-color;
+
+            @media screen and (max-width: $for-x-large-devices) {
+                font-size: 22px;
+            }
+
+            @media screen and (max-width: $for-large-devices) {
+                font-size: 22px;
+            }
+
+            @media screen and (max-width: $for-small-devices) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-height: $for-landscape-devices) {
+                font-size: 14px;
+                margin: 0 0 5px 0;
+            }
+        }
+
+        a:hover, a:active {
+            color: $accent-color;
+        }
+    }
+
+    .menu__social__is-showing {
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            display: block;
+            @extend %regular-font;
+            font-size: 21px;
+            color: $primary-bg-color;
+
+            @media screen and (max-width: $for-x-large-devices) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: $for-large-devices) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: $for-small-devices) {
+                font-size: 16px;
+            }
+
+            @media screen and (max-height: $for-landscape-devices) {
+                font-size: 12px;
+                margin: 0 0 5px 0;
+            }
+        }
+
+        a:hover, a:active {
+            color: $accent-color;
+        }
+    }
+
+    .menu__nav-title__is-showing {
+        @extend %regular-font;
+        color: $menu-title-color;
+        font-size: 21px;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-height: $for-landscape-devices) {
+            font-size: 12px;
+            margin: 0 0 5px 0;
+        }
+    }
+
+    .menu__author-name__is-showing {
+        @extend %regular-font;
+        color: $menu-title-color;
+    }
+
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $title-bg-color;
+    height: 455px;
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 400px;
+    }
+
+    @media screen and (max-width: $for-small-devices) {
+        height: calc(100vh - 70px);
+    }
+
+    @media screen and (max-height: $for-landscape-devices) {
+        height: calc(100vh - 70px);
+    }
+
+    &__title {
+        font-size: 55px;
+        letter-spacing: -3px;
+        line-height: 67px;
+        color: $accent-color;
+        @extend %bold-font;
+        margin: 50px 0 60px 0;
+
+        @media screen and (max-height: $for-landscape-devices){
+            margin: 8% 0 5% 0;
+        }
+    }
+
+    &__subtitle {
+        @extend %regular-font;
+        font-size: 20px;
+        line-height: 32px;
+        color: $primary-txt-color;
+        text-align: center;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+            line-height: 28px;
+        }
+    }
+}
+
+// =========  WORK ===========
+
+.work-container {
+    display: flex;
+    justify-content: space-around;
+
+    @media screen and (max-width: $for-x-small-devices) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.work-card {
+    width: 33%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $for-x-large-devices) {
+        height: 350px;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 280px;
+    }
+
+    @media screen and (max-width: $for-small-devices) {
+        height: 220px;
+    }
+
+    @media screen and (max-width: $for-x-small-devices) {
+        width: 100%;
+    }
+
+    &:nth-child(even) {
+        box-shadow: 15px 15px 10px -10px rgba(38,47,46,0.1);
+
+        @media screen and (max-width: $for-x-small-devices) {
+            box-shadow: 15px 15px 10px -10px rgba(38,47,46,0);
+        }
+    }
+
+    &__icon {
+        width: 76px;
+        height: 70px;
+        margin-bottom: 50px;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 66px;
+            height: 60px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 50px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__title {
+        @extend %bold-font;
+        font-size: 20px;
+        letter-spacing: -1px;
+        color: $primary-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__content {
+        @extend %regular-font;
+        width: 50%;
+        line-height: 32px;
+        color: $basic-txt-color;
+        text-align: center;
+        margin-top: 35px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            line-height: 28px;
+            margin-top: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 22px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 18px;
+            margin-top: 15px;
+        }
+    }
+}
+
+// =========== SERVICES ================
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    @media screen and (max-width: $for-x-small-devices) {
+        padding: 20px 0 0 0;
+    }
+
+
+    &__bg-part {
+        position: absolute;
+        z-index: 1;
+        right: 12%;
+        top: 37%;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            right: 10%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 70px;
+            top: 41%;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            right: 5%;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        margin: 130px 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 75%;
+            margin: 100px 0;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 80px 0;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 50px 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 85%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column-reverse;
+            margin: 20px 0;
+        }
+    }
+
+    &__info {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center; 
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__info-item {
+        width: 50%;
+        display: flex;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin-bottom: 15px;
+        }
+
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 95%;
+            text-align: justify;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__info-item-icon {
+        img {
+            width: 40px;
+            height: 40px;
+
+            @media screen and (max-width: $for-large-devices) {
+               width: 25px;
+               height: 25px;
+            }
+
+            @media screen and (max-width: $for-small-devices) {
+                width: 20px;
+                height: 20px;
+             }
+        }
+    }
+
+    &__info-item-main{
+        margin: 0 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 0 20px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 0 10px;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            margin: 0 5px;
+         }
+    }
+
+    &__info-item-main-title{
+        @extend %bold-font;
+        margin-bottom: 25px;
+        font-size: 20px;
+        color: $info-title-txt-color;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__info-item-main-about{
+        @extend %regular-font;
+        line-height: 27px;
+        color: $info-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 22px;
+         }
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+         }
+    }
+
+    &__content-image {
+        width: 300px;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 260px;
+         }
+        
+        @media screen and (max-width: $for-small-devices) {
+            width: 230px;
+         }
+    }
+
+}
+
+// =========== PORTFOLIO ===============
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 80px 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $secondary-bg-color;
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 45px 0 65px 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 35px 0 50px 0;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        margin: 80px 0 0 0;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            margin: 70px 0 0 0;
+        }
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 60px 0 0 0;
+        }
+        @media screen and (max-width: $for-large-devices) {
+            margin: 45px 0 0 0;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            margin: 25px 0 0 0;
+        }
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+        }
+    }
+
+    &__card {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-bg-color;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 32%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+        }
+    }
+
+    &__card-image {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: fill;
+        }
+    }
+
+    &__card-info {
+        padding: 30px;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            padding: 20px;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            padding: 15px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            padding: 10px;
+        }
+    }
+
+    &__card-name {
+        @extend %bold-font;
+        font-size: 20px;
+        color: $info-title-txt-color;
+        margin-bottom: 10px;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__card-about {
+        @extend %regular-font;
+        line-height: 27px;
+        color: $info-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 20px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 16px;
+        }
+    }
+}
+
+// ============= ABOUT ===========
+ 
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        padding: 60px 0 0 0;
+    }
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 50px 0 0 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 40px 0 0 0;
+    }
+
+
+    &__bg-part-one {
+        position: absolute;
+        z-index: 1;
+        left: 14%;
+        top: 38%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            top: 39%;
+            left: 11%;
+            width: 100px;
+         }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            top: 39%;
+            left: 11%;
+            width: 90px;
+         }
+
+         @media screen and (max-width: $for-large-devices) {
+            left: 10%;
+            width: 75px;
+         }
+
+         @media screen and (max-width: $for-medium-devices) {
+            left: 8%;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__bg-part-two {
+        position: absolute;
+        z-index: 1;
+        left: 27%;
+        top: 40%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            top: 42%;
+            left: 31%;
+            width: 170px;
+         }
+
+        @media screen and (max-width: $for-x-large-devices) {
+           top: 42%;
+           left: 31%;
+           width: 150px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 130px;
+         }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 110px;
+            left: 38%;
+         }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin: 130px 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            margin: 100px 0;
+            width: 75%;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 70px 0;
+            width: 75%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 45px 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin: 35px 0;
+            width: 80%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            margin: 20px 0;
+            width: 85%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+    }
+
+    &__content-image {
+        width: 300px;
+        height: 330px;
+        overflow: hidden;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 280px;
+            height: 300px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 240px;
+            height: 270px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            width: 200px;
+            height: 240px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+            height: auto;
+        }
+
+
+        img {
+            @extend %image-param;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 55%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__info-main {
+        @extend %bold-font;
+        font-size: 20px;
+        line-height: 40px;
+        color: $primary-txt-color;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 30px;
+            line-height: 35px;
+         }
+
+         @media screen and (max-width: $for-large-devices) {
+            line-height: 30px;
+            font-size: 18px;
+         }
+
+         @media screen and (max-width: $for-medium-devices) {
+            line-height: 26px;
+            font-size: 16px;
+            margin-bottom: 20px;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+         }
+    }
+
+    &__info-description {
+        @extend %regular-font;
+        line-height: 32px;
+        color: $basic-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 25px;
+         }
+
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+         }
+    }
+
+    &__info-bg-line {
+        width: 40%;
+        height: 2px;
+        background-color: $accent-color;
+
+        @media screen and (max-width: $for-x-small-devices) {
+            align-self: center;
+        }
+    }
+}
+
+// ============= CONTACT ==========
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 160px 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $secondary-bg-color;
+    position: relative;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        padding: 50px 0 150px 0;
+    }
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 50px 0 130px 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 40px 0 80px 0;
+    }
+
+    @media screen and (max-width: $for-medium-devices) {
+        padding: 30px 0 60px 0;
+    }
+
+    &__bg-part {
+        position: absolute;
+        z-index: 1;
+        left: 15%;
+        top: 66%;
+        width: 570px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+           width: 500px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 400px;
+            top: 68%;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        width: 70%;
+        margin:  130px 0 0 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 90px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 70px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin: 60px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            margin: 40px 0 0 0;
+        }
+    }
+
+    &__invite {
+        @extend %bold-font;
+        margin-bottom: 45px;
+        font-size: 55px;
+        letter-spacing: -3px;
+        color: $primary-txt-color;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 50px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 45px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 22px;
+            letter-spacing: -2px;
+        }
+
+
+    }
+
+    &__email {
+        @extend %bold-font;
+        display: block;
+        margin: 0 0 50px 50px;
+        color: $accent-color;
+        font-size: 50px;
+        letter-spacing: -2px;
+        text-decoration: none;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 44px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 35px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 30px;
+            margin: 0 0 40px 30px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 20px;
+            margin: 0 0 30px 0;
+            text-align: center;
+        }
+    }
+
+    &__email:hover, &__email:active {
+        color: $accent-color;
+    }
+
+    &__social-container {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 40%;
+        }
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 60%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 60%;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            width: 70%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &__social-invite {
+        @extend %regular-font;
+        margin-left: 100px;
+        color: $social-txt-color;
+        width: 65%;
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin-left: 70px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+    }
+
+    &__social-links-container {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 50%;
+        }
+    }
+
+    &__social-link{
+        text-decoration: none;
+    }
+
+}
+
+// ============== FOOTER ===========
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: $primary-txt-color;
+
+    @media screen and (max-width: $for-x-small-devices) {
+        height: 70px;
+    }
+
+    &__copyright {
+        @extend %bold-font;
+        font-size: 15px;
+        color: $primary-bg-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 10px;
+        }
+    }
+
+    &__copyright__accent {
+        color: $accent-color;
+    }
+}

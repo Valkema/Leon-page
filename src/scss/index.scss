@@ -186,8 +186,7 @@ html {
     position: absolute;
     z-index: 100;
     right: 27%;
-    background-color: #ff1919;
-    opacity: 1;
+    opacity: 0;
 
     @media screen and (max-width: $for-xx-large-devices) {
         right: 26%;

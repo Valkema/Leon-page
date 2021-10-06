@@ -1,0 +1,78 @@
+.header-container {
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 90px;
+    padding: 0 20% 0 20%;
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 70px;
+    }
+}
+
+.logo {
+    width: 40px;
+    height: 35px;
+    overflow: hidden;
+
+    &__image {
+        @extend %image-param;
+        object-fit: contain;
+    }
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $title-bg-color;
+    height: 455px;
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 400px;
+    }
+
+    @media screen and (max-width: $for-small-devices) {
+        height: calc(100vh - 70px);
+    }
+
+    @media screen and (max-height: $for-landscape-devices) {
+        height: calc(100vh - 70px);
+    }
+
+    &__title {
+        font-size: 55px;
+        letter-spacing: -3px;
+        line-height: 67px;
+        color: $accent-color;
+        @extend %bold-font;
+        margin: 50px 0 60px 0;
+
+        @media screen and (max-height: $for-landscape-devices){
+            margin: 8% 0 5% 0;
+        }
+    }
+
+    &__subtitle {
+        @extend %regular-font;
+        font-size: 20px;
+        line-height: 32px;
+        color: $primary-txt-color;
+        text-align: center;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+            line-height: 28px;
+        }
+    }
+}

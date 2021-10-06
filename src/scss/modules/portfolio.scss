@@ -1,0 +1,120 @@
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 80px 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $secondary-bg-color;
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 45px 0 65px 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 35px 0 50px 0;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        margin: 80px 0 0 0;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            margin: 70px 0 0 0;
+        }
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 60px 0 0 0;
+        }
+        @media screen and (max-width: $for-large-devices) {
+            margin: 45px 0 0 0;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            margin: 25px 0 0 0;
+        }
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+        }
+    }
+
+    &__card {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-bg-color;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 32%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+        }
+    }
+
+    &__card-image {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: fill;
+        }
+    }
+
+    &__card-info {
+        padding: 30px;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            padding: 20px;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            padding: 15px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            padding: 10px;
+        }
+    }
+
+    &__card-name {
+        @extend %bold-font;
+        font-size: 20px;
+        color: $info-title-txt-color;
+        margin-bottom: 10px;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__card-about {
+        @extend %regular-font;
+        line-height: 27px;
+        color: $info-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 20px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 16px;
+        }
+    }
+}

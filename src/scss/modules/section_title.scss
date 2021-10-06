@@ -1,0 +1,53 @@
+.section-title {
+    text-align: center;
+    position: relative;
+
+    &__name {
+        @extend %bold-font;
+        font-size: 162px;
+        letter-spacing: -8px;
+        color: $title-bg-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 140px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 120px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 90px;
+        }
+    }
+
+    &__tagline {
+        @extend %regular-font;
+        position: absolute;
+        z-index: 10;
+        font-size: 25px;
+        color: $basic-txt-color;
+        top: 132px;
+        width: 100%;
+        text-align: center;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 20px;
+            top: 110px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 18px;
+            top: 95px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 16px;
+            top: 70px;
+        }
+    }
+}

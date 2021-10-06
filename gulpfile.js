@@ -1,3 +1,15 @@
+const { src, dest } = require('gulp');
+const gulp =  require('gulp');
+const fileinclude = require('gulp-file-include');
+const del =require('del');
+const scss = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const groupMedia = require('gulp-group-css-media-queries');
+const cleanCss = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const browsersync = require('browser-sync').create();
+
 const projectFolder = require('path').join(__dirname, "./dist/build/Leon_page");
 const srcFolder = "src";
 const path = {
@@ -20,23 +32,11 @@ const path = {
     },
     clean: "./" + projectFolder + "/"
 }
-const { src, dest } = require('gulp');
-const gulp =  require('gulp');
-const fileinclude = require('gulp-file-include');
-const del =require('del');
-const scss = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const groupMedia = require('gulp-group-css-media-queries');
-const cleanCss = require('gulp-clean-css');
-const rename = require('gulp-rename');
-const imagemin = require('gulp-imagemin');
-const browsersync = require('browser-sync').create();
-
 
 function browserSync() {
   browsersync.init({
       server:{
-          baseDir: "./" + projectFolder + "/"
+          baseDir: projectFolder + "/"
       },
       port: 3000,
       notify: false

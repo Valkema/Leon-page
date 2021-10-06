@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Work Sans Regular';
+    src: url('../fonts/WorkSans-Regular.ttf')format("truetype");
+   }
+@font-face {
+   font-family: 'Work Sans Bold';
+   src: url('../fonts/WorkSans-ExtraBold.ttf')format("truetype");
+   }
+
+$main-font-family: 'Work Sans Regular', sans-serif;
+$bold-font-family: 'Work Sans Bold', sans-serif;
+$primary-bg-color: #fff;
+$secondary-bg-color: #fafafa;
+$title-bg-color: #f6f6f6;
+$accent-color: #10cab7;
+$primary-txt-color: #2c4755;
+$basic-txt-color: #575757;
+$info-title-txt-color: #1f2021;
+$info-txt-color: #4d4c4c;
+$social-txt-color: #334752;
+$menu-title-color: #637988;
+
+$for-xx-large-devices: 1679px;
+$for-x-large-devices: 1399px;
+$for-large-devices: 1199px;
+$for-medium-devices: 991px;
+$for-small-devices: 767px;
+$for-x-small-devices: 575px;
+$for-landscape-devices: 500px;
+
+
+
+%bold-font {
+    font-family: $bold-font-family;
+    font-weight: 800;
+    margin: 0;
+}
+
+%regular-font {
+    font-family: $main-font-family;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -1px;
+    margin: 0;
+    @media screen and (max-width: $for-x-large-devices) {
+        font-size: 13px;
+    }
+    @media screen and (max-width: $for-large-devices) {
+        font-size: 12px;
+    }
+}
+
+%image-param {
+    width: inherit;
+    height: inherit;
+}

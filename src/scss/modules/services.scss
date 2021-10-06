@@ -1,0 +1,193 @@
+.services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    @media screen and (max-width: $for-x-small-devices) {
+        padding: 20px 0 0 0;
+    }
+
+
+    &__bg-part {
+        position: absolute;
+        z-index: 1;
+        right: 12%;
+        top: 37%;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            right: 10%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 70px;
+            top: 41%;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            right: 5%;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        margin: 130px 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 75%;
+            margin: 100px 0;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 80px 0;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 50px 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 85%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column-reverse;
+            margin: 20px 0;
+        }
+    }
+
+    &__info {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center; 
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__info-item {
+        width: 50%;
+        display: flex;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin-bottom: 15px;
+        }
+
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 95%;
+            text-align: justify;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__info-item-icon {
+        img {
+            width: 40px;
+            height: 40px;
+
+            @media screen and (max-width: $for-large-devices) {
+               width: 25px;
+               height: 25px;
+            }
+
+            @media screen and (max-width: $for-small-devices) {
+                width: 20px;
+                height: 20px;
+             }
+        }
+    }
+
+    &__info-item-main{
+        margin: 0 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 0 20px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 0 10px;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            margin: 0 5px;
+         }
+    }
+
+    &__info-item-main-title{
+        @extend %bold-font;
+        margin-bottom: 25px;
+        font-size: 20px;
+        color: $info-title-txt-color;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__info-item-main-about{
+        @extend %regular-font;
+        line-height: 27px;
+        color: $info-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 22px;
+         }
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+         }
+    }
+
+    &__content-image {
+        width: 300px;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 260px;
+         }
+        
+        @media screen and (max-width: $for-small-devices) {
+            width: 230px;
+         }
+    }
+
+}

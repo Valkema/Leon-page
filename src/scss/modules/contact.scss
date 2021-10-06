@@ -1,0 +1,203 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 160px 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $secondary-bg-color;
+    position: relative;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        padding: 50px 0 150px 0;
+    }
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 50px 0 130px 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 40px 0 80px 0;
+    }
+
+    @media screen and (max-width: $for-medium-devices) {
+        padding: 30px 0 60px 0;
+    }
+
+    &__bg-part {
+        position: absolute;
+        z-index: 1;
+        left: 15%;
+        top: 66%;
+        width: 570px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+           width: 500px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 400px;
+            top: 68%;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        width: 70%;
+        margin:  130px 0 0 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 90px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 70px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin: 60px 0 0 0;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            margin: 40px 0 0 0;
+        }
+    }
+
+    &__invite {
+        @extend %bold-font;
+        margin-bottom: 45px;
+        font-size: 55px;
+        letter-spacing: -3px;
+        color: $primary-txt-color;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 50px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 45px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 22px;
+            letter-spacing: -2px;
+        }
+
+
+    }
+
+    &__email {
+        @extend %bold-font;
+        display: block;
+        margin: 0 0 50px 50px;
+        color: $accent-color;
+        font-size: 50px;
+        letter-spacing: -2px;
+        text-decoration: none;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            font-size: 44px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 35px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 30px;
+            margin: 0 0 40px 30px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            font-size: 20px;
+            margin: 0 0 30px 0;
+            text-align: center;
+        }
+    }
+
+    &__email:hover, &__email:active {
+        color: $accent-color;
+    }
+
+    &__social-container {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 40%;
+        }
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 60%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 60%;
+        }
+        @media screen and (max-width: $for-small-devices) {
+            width: 70%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &__social-invite {
+        @extend %regular-font;
+        margin-left: 100px;
+        color: $social-txt-color;
+        width: 65%;
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin-left: 70px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+    }
+
+    &__social-links-container {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 50%;
+        }
+    }
+
+    &__social-link{
+        text-decoration: none;
+    }
+
+}

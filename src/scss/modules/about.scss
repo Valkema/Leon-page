@@ -1,0 +1,230 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        padding: 60px 0 0 0;
+    }
+
+    @media screen and (max-width: $for-x-large-devices) {
+        padding: 50px 0 0 0;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        padding: 40px 0 0 0;
+    }
+
+
+    &__bg-part-one {
+        position: absolute;
+        z-index: 1;
+        left: 14%;
+        top: 38%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            top: 39%;
+            left: 11%;
+            width: 100px;
+         }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            top: 39%;
+            left: 11%;
+            width: 90px;
+         }
+
+         @media screen and (max-width: $for-large-devices) {
+            left: 10%;
+            width: 75px;
+         }
+
+         @media screen and (max-width: $for-medium-devices) {
+            left: 8%;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__bg-part-two {
+        position: absolute;
+        z-index: 1;
+        left: 27%;
+        top: 40%;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            top: 42%;
+            left: 31%;
+            width: 170px;
+         }
+
+        @media screen and (max-width: $for-x-large-devices) {
+           top: 42%;
+           left: 31%;
+           width: 150px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 130px;
+         }
+
+        @media screen and (max-width: $for-medium-devices) {
+            width: 110px;
+            left: 38%;
+         }
+
+        @media screen and (max-width: $for-small-devices) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin: 130px 0;
+        z-index: 5;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            margin: 100px 0;
+            width: 75%;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin: 70px 0;
+            width: 75%;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            margin: 45px 0;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            margin: 35px 0;
+            width: 80%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            margin: 20px 0;
+            width: 85%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+    }
+
+    &__content-image {
+        width: 300px;
+        height: 330px;
+        overflow: hidden;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 280px;
+            height: 300px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 240px;
+            height: 270px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            width: 200px;
+            height: 240px;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+            height: auto;
+        }
+
+
+        img {
+            @extend %image-param;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $for-xx-large-devices) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 55%;
+        }
+
+        @media screen and (max-width: $for-x-small-devices) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__info-main {
+        @extend %bold-font;
+        font-size: 20px;
+        line-height: 40px;
+        color: $primary-txt-color;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            margin-bottom: 30px;
+            line-height: 35px;
+         }
+
+         @media screen and (max-width: $for-large-devices) {
+            line-height: 30px;
+            font-size: 18px;
+         }
+
+         @media screen and (max-width: $for-medium-devices) {
+            line-height: 26px;
+            font-size: 16px;
+            margin-bottom: 20px;
+         }
+
+         @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+         }
+    }
+
+    &__info-description {
+        @extend %regular-font;
+        line-height: 32px;
+        color: $basic-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 25px;
+         }
+
+        @media screen and (max-width: $for-small-devices) {
+            line-height: 20px;
+         }
+    }
+
+    &__info-bg-line {
+        width: 40%;
+        height: 2px;
+        background-color: $accent-color;
+
+        @media screen and (max-width: $for-x-small-devices) {
+            align-self: center;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+
+.work-container {
+    display: flex;
+    justify-content: space-around;
+
+    @media screen and (max-width: $for-x-small-devices) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.work-card {
+    width: 33%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $for-x-large-devices) {
+        height: 350px;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        height: 280px;
+    }
+
+    @media screen and (max-width: $for-small-devices) {
+        height: 220px;
+    }
+
+    @media screen and (max-width: $for-x-small-devices) {
+        width: 100%;
+    }
+
+    &:nth-child(even) {
+        box-shadow: 15px 15px 10px -10px rgba(38,47,46,0.1);
+
+        @media screen and (max-width: $for-x-small-devices) {
+            box-shadow: 15px 15px 10px -10px rgba(38,47,46,0);
+        }
+    }
+
+    &__icon {
+        width: 76px;
+        height: 70px;
+        margin-bottom: 50px;
+        overflow: hidden;
+
+        img {
+            @extend %image-param;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: $for-x-large-devices) {
+            width: 66px;
+            height: 60px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            width: 50px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__title {
+        @extend %bold-font;
+        font-size: 20px;
+        letter-spacing: -1px;
+        color: $primary-txt-color;
+
+        @media screen and (max-width: $for-large-devices) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: $for-medium-devices) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $for-small-devices) {
+            font-size: 14px;
+        }
+    }
+
+    &__content {
+        @extend %regular-font;
+        width: 50%;
+        line-height: 32px;
+        color: $basic-txt-color;
+        text-align: center;
+        margin-top: 35px;
+
+        @media screen and (max-width: $for-x-large-devices) {
+            line-height: 28px;
+            margin-top: 25px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 22px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: $for-large-devices) {
+            line-height: 18px;
+            margin-top: 15px;
+        }
+    }
+}

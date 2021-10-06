@@ -1,0 +1,265 @@
+.menu {
+    position: relative;
+    cursor: pointer;
+    z-index: 200;
+
+    &__is-showing {
+        display: none;
+    }
+
+    &__burger-icon {
+        width: 28px;
+        height: 15px;
+        overflow: hidden;
+
+        &__icon_image {
+            @extend %image-param;
+            object-fit: contain;
+        }
+    }
+
+    &__closing-icon {
+        display: none;
+    }
+
+    &:hover{
+        background-color: $primary-txt-color;
+        width: 30%;
+        height: 100%;
+        z-index: 10;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top:0;
+        box-sizing: border-box;
+        padding-top: 40px;
+    
+        @media screen and (max-width: $for-large-devices) {
+            width: 40%;
+        }
+    
+        @media screen and (max-width: $for-medium-devices) {
+            width: 100%;
+        }
+    
+        .menu__burger-icon {
+            display: none;
+        }
+    
+        .menu__closing-icon {
+            display: block;
+            width: 28px;
+            height: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            margin: 0 0 0 30px;
+    
+            .menu__icon_image {
+                @extend %image-param;
+                object-fit: contain;
+            }
+        }
+    
+        .menu__is-showing {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $primary-txt-color;
+            z-index: 50;
+            width: 100%;
+            height: 100%;
+            padding: 20px 0 30px 35px;
+            box-sizing: border-box;
+    
+            @media screen and (max-height: $for-landscape-devices) {
+                padding: 5px 0 20px 35px;
+            }
+        }
+
+        .menu__nav-container__is-showing {
+            @media screen and (max-height: $for-landscape-devices) {
+                padding: 20px 20px 20px 0;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    
+        .menu__nav__is-showing {
+            margin: 0 0 40px 0;
+    
+            @media screen and (max-width: $for-small-devices) {
+                margin: 0 0 20px 0;
+            }
+    
+            @media screen and (max-height: $for-landscape-devices) {
+                margin: 0 0 5px 0;
+            }
+        }
+    
+        .menu__nav-list-item__is-showing {
+            list-style: none;
+            margin-left: -40px;
+    
+            a {
+                text-decoration: none;
+                @extend %regular-font;
+                font-size: 29px;
+                color: $primary-bg-color;
+    
+                @media screen and (max-width: $for-x-large-devices) {
+                    font-size: 22px;
+                }
+    
+                @media screen and (max-width: $for-large-devices) {
+                    font-size: 22px;
+                }
+    
+                @media screen and (max-width: $for-small-devices) {
+                    font-size: 18px;
+                }
+    
+                @media screen and (max-height: $for-landscape-devices) {
+                    font-size: 12px;
+                    margin: 0 0 5px 0;
+                }
+            }
+    
+            a:hover, a:active {
+                color: $accent-color;
+            }
+                
+        }
+    
+        .menu__contact__is-showing {
+            margin: 0 0 40px 0;
+    
+            @media screen and (max-width: $for-small-devices) {
+                margin: 0 0 20px 0;
+            }
+            @media screen and (max-height: $for-landscape-devices) {
+                margin: 0 0 5px 0;
+            }
+    
+            a {
+                text-decoration: none;
+                @extend %regular-font;
+                font-size: 29px;
+                color: $primary-bg-color;
+    
+                @media screen and (max-width: $for-x-large-devices) {
+                    font-size: 22px;
+                }
+    
+                @media screen and (max-width: $for-large-devices) {
+                    font-size: 22px;
+                }
+    
+                @media screen and (max-width: $for-small-devices) {
+                    font-size: 18px;
+                }
+    
+                @media screen and (max-height: $for-landscape-devices) {
+                    font-size: 12px;
+                    margin: 0 0 5px 0;
+                }
+            }
+    
+            a:hover, a:active {
+                color: $accent-color;
+            }
+        }
+    
+        .menu__social__is-showing {
+            margin: 0;
+    
+            a {
+                text-decoration: none;
+                display: block;
+                @extend %regular-font;
+                font-size: 21px;
+                color: $primary-bg-color;
+    
+                @media screen and (max-width: $for-x-large-devices) {
+                    font-size: 18px;
+                }
+    
+                @media screen and (max-width: $for-large-devices) {
+                    font-size: 18px;
+                }
+    
+                @media screen and (max-width: $for-small-devices) {
+                    font-size: 16px;
+                }
+    
+                @media screen and (max-height: $for-landscape-devices) {
+                    font-size: 12px;
+                    margin: 0 0 5px 0;
+                }
+            }
+    
+            a:hover, a:active {
+                color: $accent-color;
+            }
+        }
+    
+        .menu__nav-title__is-showing {
+            @extend %regular-font;
+            color: $menu-title-color;
+            font-size: 21px;
+            margin-bottom: 25px;
+    
+            @media screen and (max-width: $for-x-large-devices) {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+    
+            @media screen and (max-width: $for-large-devices) {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+    
+            @media screen and (max-width: $for-small-devices) {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+    
+            @media screen and (max-height: $for-landscape-devices) {
+                font-size: 12px;
+                margin: 0 0 5px 0;
+            }
+        }
+    
+        .menu__author-name__is-showing {
+            @extend %regular-font;
+            color: $menu-title-color;
+        }
+    }
+}
+
+.menu__not-showing-elem {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    right: 27%;
+    opacity: 0;
+
+    @media screen and (max-width: $for-xx-large-devices) {
+        right: 26%;
+    }
+    @media screen and (max-width: $for-x-large-devices) {
+        right: 25%;
+    }
+
+    @media screen and (max-width: $for-large-devices) {
+        right: 35%;
+        top: 30px;
+    }
+
+    @media screen and (max-width: $for-medium-devices) {
+        left: 30px;
+    }
+}

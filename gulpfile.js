@@ -1,4 +1,4 @@
-const projectFolder = require('path').basename(__dirname);
+const projectFolder = require('path').join(__dirname, "./dist/build/Leon-page");
 const srcFolder = "src";
 const path = {
     build: {

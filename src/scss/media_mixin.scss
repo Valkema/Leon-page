@@ -1,0 +1,43 @@
+
+@mixin xxl_devices{
+   @media screen and (max-width: $for-xx-large-devices){
+       @content;
+   }
+}
+
+@mixin xl_devices {
+   @media screen and (max-width: $for-x-large-devices){
+       @content;
+   }
+}
+
+@mixin l_devices {
+   @media screen and (max-width: $for-large-devices){
+       @content;
+   }
+}
+
+@mixin m_devices {
+   @media screen and (max-width: $for-medium-devices){
+       @content;
+   }
+}
+
+@mixin s_devices {
+   @media screen and (max-width: $for-small-devices){
+       @content;
+   }
+}
+
+@mixin xs_devices {
+   @media screen and (max-width: $for-x-small-devices){
+       @content;
+   }
+}
+
+@mixin landscape_devices{
+   @media screen and (max-height: $for-landscape-devices){
+       @content;
+   }
+}
+

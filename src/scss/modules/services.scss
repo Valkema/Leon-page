@@ -7,32 +7,26 @@
     margin: 0;
     box-sizing: border-box;
     position: relative;
-
-    @media screen and (max-width: $for-x-small-devices) {
+    @include xs_devices {
         padding: 20px 0 0 0;
     }
-
 
     &__bg-part {
         position: absolute;
         z-index: 1;
         right: 12%;
         top: 37%;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             right: 10%;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             width: 70px;
             top: 41%;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             right: 5%;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             display: none;
         }
     }
@@ -44,25 +38,20 @@
         width: 70%;
         margin: 130px 0;
         z-index: 5;
-
-        @media screen and (max-width: $for-xx-large-devices) {
+        @include xxl_devices {
             width: 75%;
             margin: 100px 0;
         }
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin: 80px 0;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             margin: 50px 0;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             width: 85%;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             flex-direction: column-reverse;
             margin: 20px 0;
         }
@@ -74,8 +63,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: center; 
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             flex-direction: column;
             justify-content: center;
         }
@@ -85,17 +73,13 @@
         width: 50%;
         display: flex;
         margin-bottom: 40px;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin-bottom: 25px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             margin-bottom: 15px;
         }
-
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             width: 95%;
             text-align: justify;
             margin-top: 10px;
@@ -107,31 +91,26 @@
         img {
             width: 40px;
             height: 40px;
-
-            @media screen and (max-width: $for-large-devices) {
+            @include l_devices {
                width: 25px;
                height: 25px;
             }
-
-            @media screen and (max-width: $for-small-devices) {
+            @include s_devices {
                 width: 20px;
                 height: 20px;
-             }
+            }
         }
     }
 
     &__info-item-main{
         margin: 0 40px;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin: 0 20px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             margin: 0 10px;
          }
-
-         @media screen and (max-width: $for-small-devices) {
+         @include s_devices {
             margin: 0 5px;
          }
     }
@@ -141,20 +120,17 @@
         margin-bottom: 25px;
         font-size: 20px;
         color: $info-title-txt-color;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin-bottom: 15px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 18px;
             margin-bottom: 5px;
         }
-        
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             font-size: 16px;
         }
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 14px;
         }
     }
@@ -163,31 +139,27 @@
         @extend %regular-font;
         line-height: 27px;
         color: $info-txt-color;
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             line-height: 22px;
-         }
-        @media screen and (max-width: $for-small-devices) {
+        }
+        @include s_devices {
             line-height: 20px;
-         }
+        }
     }
 
     &__content-image {
         width: 300px;
         overflow: hidden;
+        @include l_devices {
+            width: 260px;
+        }
+        @include s_devices {
+            width: 230px;
+        }
 
         img {
             @extend %image-param;
             object-fit: cover;
         }
-
-        @media screen and (max-width: $for-large-devices) {
-            width: 260px;
-         }
-        
-        @media screen and (max-width: $for-small-devices) {
-            width: 230px;
-         }
     }
-
 }

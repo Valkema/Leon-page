@@ -7,12 +7,10 @@
     margin: 0;
     box-sizing: border-box;
     background-color: $secondary-bg-color;
-
-    @media screen and (max-width: $for-x-large-devices) {
+    @include xl_devices {
         padding: 45px 0 65px 0;
     }
-
-    @media screen and (max-width: $for-large-devices) {
+    @include l_devices {
         padding: 35px 0 50px 0;
     }
 
@@ -22,20 +20,19 @@
         align-items: center;
         width: 85%;
         margin: 80px 0 0 0;
-
-        @media screen and (max-width: $for-xx-large-devices) {
+        @include xxl_devices {
             margin: 70px 0 0 0;
         }
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin: 60px 0 0 0;
         }
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             margin: 45px 0 0 0;
         }
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             margin: 25px 0 0 0;
         }
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             flex-direction: column;
             justify-content: center;
             width: 90%;
@@ -47,12 +44,10 @@
         display: flex;
         flex-direction: column;
         background-color: $primary-bg-color;
-
-        @media screen and (max-width: $for-xx-large-devices) {
+        @include xxl_devices {
             width: 32%;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             width: 100%;
         }
     }
@@ -70,16 +65,13 @@
     &__card-info {
         padding: 30px;
         box-sizing: border-box;
-
-        @media screen and (max-width: $for-xx-large-devices) {
+        @include xxl_devices {
             padding: 20px;
         }
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             padding: 15px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             padding: 10px;
         }
     }
@@ -89,17 +81,14 @@
         font-size: 20px;
         color: $info-title-txt-color;
         margin-bottom: 10px;
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 18px;
             margin-bottom: 5px;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             font-size: 16px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 14px;
         }
     }
@@ -108,12 +97,10 @@
         @extend %regular-font;
         line-height: 27px;
         color: $info-txt-color;
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             line-height: 20px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             line-height: 16px;
         }
     }

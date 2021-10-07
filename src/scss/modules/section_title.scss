@@ -7,16 +7,13 @@
         font-size: 162px;
         letter-spacing: -8px;
         color: $title-bg-color;
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 140px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 120px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include xs_devices {
             font-size: 90px;
         }
     }
@@ -30,22 +27,18 @@
         top: 132px;
         width: 100%;
         text-align: center;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             font-size: 25px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 20px;
             top: 110px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 18px;
             top: 95px;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             font-size: 16px;
             top: 70px;
         }

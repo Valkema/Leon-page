@@ -8,20 +8,16 @@
     box-sizing: border-box;
     background-color: $secondary-bg-color;
     position: relative;
-
-    @media screen and (max-width: $for-xx-large-devices) {
+    @include xxl_devices {
         padding: 50px 0 150px 0;
     }
-
-    @media screen and (max-width: $for-x-large-devices) {
+    @include xl_devices {
         padding: 50px 0 130px 0;
     }
-
-    @media screen and (max-width: $for-large-devices) {
+    @include l_devices {
         padding: 40px 0 80px 0;
     }
-
-    @media screen and (max-width: $for-medium-devices) {
+    @include m_devices {
         padding: 30px 0 60px 0;
     }
 
@@ -31,17 +27,14 @@
         left: 15%;
         top: 66%;
         width: 570px;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
            width: 500px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             width: 400px;
             top: 68%;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             display: none;
         }
     }
@@ -50,20 +43,16 @@
         width: 70%;
         margin:  130px 0 0 0;
         z-index: 5;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             margin: 90px 0 0 0;
         }
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include l_devices {
             margin: 70px 0 0 0;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             margin: 60px 0 0 0;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             margin: 40px 0 0 0;
         }
     }
@@ -74,32 +63,24 @@
         font-size: 55px;
         letter-spacing: -3px;
         color: $primary-txt-color;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             font-size: 50px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 45px;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             font-size: 40px;
             margin-bottom: 30px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 34px;
             margin-bottom: 30px;
         }
-
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             font-size: 22px;
             letter-spacing: -2px;
         }
-
-
     }
 
     &__email {
@@ -110,21 +91,17 @@
         font-size: 50px;
         letter-spacing: -2px;
         text-decoration: none;
-
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             font-size: 44px;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 35px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             font-size: 30px;
             margin: 0 0 40px 30px;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             font-size: 20px;
             margin: 0 0 30px 0;
             text-align: center;
@@ -139,26 +116,22 @@
         display: flex;
         justify-content: space-between;
         width: 35%;
-
-        @media screen and (max-width: $for-xx-large-devices) {
+        @include xxl_devices {
             width: 40%;
         }
-        @media screen and (max-width: $for-x-large-devices) {
+        @include xl_devices {
             width: 60%;
         }
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             width: 50%;
         }
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             width: 60%;
         }
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             width: 70%;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -171,16 +144,13 @@
         margin-left: 100px;
         color: $social-txt-color;
         width: 65%;
-
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             margin-left: 70px;
         }
-
-        @media screen and (max-width: $for-small-devices) {
+        @include s_devices {
             margin-left: 40px;
         }
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             margin: 0 0 20px 0;
             text-align: center;
         }
@@ -190,14 +160,12 @@
         display: flex;
         justify-content: space-between;
         width: 35%;
-
-        @media screen and (max-width: $for-x-small-devices) {
+        @include xs_devices {
             width: 50%;
         }
     }
 
-    &__social-link{
+    &__social-link {
         text-decoration: none;
     }
-
 }

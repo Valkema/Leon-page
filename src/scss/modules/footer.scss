@@ -4,8 +4,7 @@
     align-items: center;
     height: 100px;
     background-color: $primary-txt-color;
-
-    @media screen and (max-width: $for-x-small-devices) {
+    @include xs_devices {
         height: 70px;
     }
 
@@ -13,8 +12,7 @@
         @extend %bold-font;
         font-size: 15px;
         color: $primary-bg-color;
-
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             font-size: 12px;
         }
     }

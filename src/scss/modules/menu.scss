@@ -33,12 +33,10 @@
         top:0;
         box-sizing: border-box;
         padding-top: 40px;
-    
-        @media screen and (max-width: $for-large-devices) {
+        @include l_devices {
             width: 40%;
         }
-    
-        @media screen and (max-width: $for-medium-devices) {
+        @include m_devices {
             width: 100%;
         }
     
@@ -70,14 +68,13 @@
             height: 100%;
             padding: 20px 0 30px 35px;
             box-sizing: border-box;
-    
-            @media screen and (max-height: $for-landscape-devices) {
+            @include landscape_devices {
                 padding: 5px 0 20px 35px;
             }
         }
 
         .menu__nav-container__is-showing {
-            @media screen and (max-height: $for-landscape-devices) {
+            @include landscape_devices {
                 padding: 20px 20px 20px 0;
                 box-sizing: border-box;
                 display: flex;
@@ -87,12 +84,10 @@
     
         .menu__nav__is-showing {
             margin: 0 0 40px 0;
-    
-            @media screen and (max-width: $for-small-devices) {
+            @include s_devices {
                 margin: 0 0 20px 0;
             }
-    
-            @media screen and (max-height: $for-landscape-devices) {
+            @include landscape_devices {
                 margin: 0 0 5px 0;
             }
         }
@@ -106,20 +101,16 @@
                 @extend %regular-font;
                 font-size: 29px;
                 color: $primary-bg-color;
-    
-                @media screen and (max-width: $for-x-large-devices) {
+                @include xl_devices {
                     font-size: 22px;
                 }
-    
-                @media screen and (max-width: $for-large-devices) {
+                @include l_devices {
                     font-size: 22px;
                 }
-    
-                @media screen and (max-width: $for-small-devices) {
+                @include s_devices {
                     font-size: 18px;
                 }
-    
-                @media screen and (max-height: $for-landscape-devices) {
+                @include landscape_devices {
                     font-size: 12px;
                     margin: 0 0 5px 0;
                 }
@@ -128,38 +119,32 @@
             a:hover, a:active {
                 color: $accent-color;
             }
-                
         }
     
         .menu__contact__is-showing {
             margin: 0 0 40px 0;
-    
-            @media screen and (max-width: $for-small-devices) {
+            @include s_devices {
                 margin: 0 0 20px 0;
             }
-            @media screen and (max-height: $for-landscape-devices) {
+            @include landscape_devices {
                 margin: 0 0 5px 0;
             }
     
             a {
-                text-decoration: none;
                 @extend %regular-font;
+                text-decoration: none;
                 font-size: 29px;
                 color: $primary-bg-color;
-    
-                @media screen and (max-width: $for-x-large-devices) {
+                @include xl_devices {
                     font-size: 22px;
                 }
-    
-                @media screen and (max-width: $for-large-devices) {
+                @include l_devices {
                     font-size: 22px;
                 }
-    
-                @media screen and (max-width: $for-small-devices) {
+                @include s_devices {
                     font-size: 18px;
                 }
-    
-                @media screen and (max-height: $for-landscape-devices) {
+                @include landscape_devices {
                     font-size: 12px;
                     margin: 0 0 5px 0;
                 }
@@ -174,25 +159,21 @@
             margin: 0;
     
             a {
+                @extend %regular-font;
                 text-decoration: none;
                 display: block;
-                @extend %regular-font;
                 font-size: 21px;
                 color: $primary-bg-color;
-    
-                @media screen and (max-width: $for-x-large-devices) {
+                @include xl_devices {
                     font-size: 18px;
                 }
-    
-                @media screen and (max-width: $for-large-devices) {
+                @include l_devices {
                     font-size: 18px;
                 }
-    
-                @media screen and (max-width: $for-small-devices) {
+                @include s_devices {
                     font-size: 16px;
                 }
-    
-                @media screen and (max-height: $for-landscape-devices) {
+                @include landscape_devices {
                     font-size: 12px;
                     margin: 0 0 5px 0;
                 }
@@ -208,23 +189,19 @@
             color: $menu-title-color;
             font-size: 21px;
             margin-bottom: 25px;
-    
-            @media screen and (max-width: $for-x-large-devices) {
+            @include xl_devices {
                 font-size: 16px;
                 margin-bottom: 15px;
             }
-    
-            @media screen and (max-width: $for-large-devices) {
+            @include l_devices {
                 font-size: 16px;
                 margin-bottom: 15px;
             }
-    
-            @media screen and (max-width: $for-small-devices) {
+            @include s_devices {
                 font-size: 14px;
                 margin-bottom: 10px;
             }
-    
-            @media screen and (max-height: $for-landscape-devices) {
+            @include landscape_devices {
                 font-size: 12px;
                 margin: 0 0 5px 0;
             }
@@ -246,20 +223,17 @@
     z-index: 100;
     right: 27%;
     opacity: 0;
-
-    @media screen and (max-width: $for-xx-large-devices) {
+    @include xxl_devices {
         right: 26%;
     }
-    @media screen and (max-width: $for-x-large-devices) {
+    @include xl_devices {
         right: 25%;
     }
-
-    @media screen and (max-width: $for-large-devices) {
+    @include l_devices {
         right: 35%;
         top: 30px;
     }
-
-    @media screen and (max-width: $for-medium-devices) {
+    @include m_devices {
         left: 30px;
     }
 }

@@ -1,4 +1,29 @@
 
+%bold-font {
+    font-family: $bold-font-family;
+    font-weight: 800;
+    margin: 0;
+}
+
+%regular-font {
+    font-family: $main-font-family;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -1px;
+    margin: 0;
+    @include xl_devices {
+        font-size: 13px;
+    }
+    @include l_devices {
+        font-size: 12px;
+    }
+}
+
+%image-param {
+    width: inherit;
+    height: inherit;
+}
+
 html {
     scroll-behavior: smooth;
 }

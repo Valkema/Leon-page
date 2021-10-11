@@ -9,6 +9,7 @@ const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const browsersync = require('browser-sync').create();
+const ejs = require("gulp-ejs");
 
 const projectFolder = require('path').join(__dirname, "./dist/build/Leon_page");
 const srcFolder = "src";
@@ -20,13 +21,13 @@ const path = {
         fonts: projectFolder+"/fonts/",
     },
     src: {
-        html: [srcFolder+"/*.html", "!"+srcFolder+"/_*.html"],
+        ejs: [srcFolder+"/*.ejs", "!"+srcFolder+"/_*.ejs"],
         css: srcFolder+"/scss/*.scss",
         img: srcFolder+"/img/**/*.{jpg,png,svg,gif,ico,webp}",
         fonts: srcFolder+"/fonts/*.ttf",
     },
     watch: {
-        html: srcFolder+"/**/*.html",
+        ejs: srcFolder+"/**/*.ejs",
         css: srcFolder+"/scss/**/*.scss",
         img: srcFolder+"/img/**/*.{jpg,png,svg,gif,ico,webp}",
     },
@@ -44,8 +45,13 @@ function browserSync() {
 };
 
 function htmlCreate() {
-    return src(path.src.html)
+    return src(path.src.ejs)
         .pipe(fileinclude())
+        .pipe(
+            rename({ 
+                extname: ".html" 
+            })
+        )       
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())
 };
@@ -94,7 +100,7 @@ function fontsCreate() {
 };
 
 function watchFiles() {
-    gulp.watch([path.watch.html], htmlCreate);
+    gulp.watch([path.watch.ejs], htmlCreate);
     gulp.watch([path.watch.css], cssCreate);
     gulp.watch([path.watch.img], imagesCreate);
 };

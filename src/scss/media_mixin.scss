@@ -35,7 +35,7 @@
    }
 }
 
-@mixin landscape_devices{
+@mixin landscape_devices {
    @media screen and (max-height: $for-landscape-devices){
        @content;
    }

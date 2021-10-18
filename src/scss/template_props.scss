@@ -1,0 +1,25 @@
+@import './constants';
+@import './media_mixin';
+
+%bold-font {
+    font-family: $bold-font-family;
+    font-weight: 800;
+}
+
+%regular-font {
+    font-family: $main-font-family;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -1px;
+    @include xl_devices {
+        font-size: 13px;
+    }
+    @include l_devices {
+        font-size: 12px;
+    }
+}
+
+%image-param {
+    width: inherit;
+    height: inherit;
+}

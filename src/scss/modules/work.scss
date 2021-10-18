@@ -1,3 +1,5 @@
+@import './../template_props';
+@import './../media_mixin';
 
 .work-container {
     display: flex;
@@ -59,6 +61,7 @@
 
     &__title {
         @extend %bold-font;
+        margin: 0;
         font-size: 20px;
         letter-spacing: -1px;
         color: $primary-txt-color;
@@ -79,7 +82,7 @@
         line-height: 32px;
         color: $basic-txt-color;
         text-align: center;
-        margin-top: 35px;
+        margin: 35px 0 0 0;
         @include xl_devices {
             line-height: 28px;
             margin-top: 25px;

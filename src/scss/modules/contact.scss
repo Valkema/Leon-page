@@ -1,3 +1,6 @@
+@import './../template_props';
+@import './../media_mixin';
+
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -59,7 +62,7 @@
 
     &__invite {
         @extend %bold-font;
-        margin-bottom: 45px;
+        margin: 45px;
         font-size: 55px;
         letter-spacing: -3px;
         color: $primary-txt-color;
@@ -86,7 +89,7 @@
     &__email {
         @extend %bold-font;
         display: block;
-        margin: 0 0 50px 50px;
+        margin: 0 0 50px 0;
         color: $accent-color;
         font-size: 50px;
         letter-spacing: -2px;
@@ -141,7 +144,7 @@
 
     &__social-invite {
         @extend %regular-font;
-        margin-left: 100px;
+        margin: 0 0 0 100px;
         color: $social-txt-color;
         width: 65%;
         @include m_devices {

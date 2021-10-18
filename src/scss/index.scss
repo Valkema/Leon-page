@@ -1,8 +1,9 @@
 @import './normalize.css/normalize';
 @import './constants';
+@import './template_props';
 @import './media_mixin';
-@import './modules/main.scss';
-@import './modules/menu.scss';
+@import './modules/main';
+@import './modules/menu';
 @import './modules/section_title';
 @import './modules/header';
 @import './modules/work';

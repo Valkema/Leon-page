@@ -1,3 +1,6 @@
+@import './../template_props';
+@import './../media_mixin';
+
 .menu {
     position: relative;
     cursor: pointer;
@@ -101,6 +104,7 @@
     &:hover &__nav-list-item__is-showing a {
         text-decoration: none;
         @extend %regular-font;
+        margin: 0;
         font-size: 29px;
         color: $primary-bg-color;
         @include xl_devices {
@@ -136,6 +140,7 @@
     
     &:hover &__contact__is-showing a {
         @extend %regular-font;
+        margin: 0;
         text-decoration: none;
         font-size: 29px;
         color: $primary-bg-color;
@@ -166,6 +171,7 @@
     
     &:hover &__social__is-showing a {
         @extend %regular-font;
+        margin: 0;
         text-decoration: none;
         display: block;
         font-size: 21px;
@@ -194,7 +200,7 @@
         @extend %regular-font;
         color: $menu-title-color;
         font-size: 21px;
-        margin-bottom: 25px;
+        margin: 0 0 25px 0;
         @include xl_devices {
             font-size: 16px;
             margin-bottom: 15px;
@@ -215,6 +221,7 @@
     
     &:hover &__author-name__is-showing {
         @extend %regular-font;
+        margin: 0;
         color: $menu-title-color;
     }
 }

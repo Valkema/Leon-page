@@ -1,3 +1,6 @@
+@import './../template_props';
+@import './../media_mixin';
+
 .services-container {
     display: flex;
     flex-direction: column;
@@ -117,7 +120,7 @@
 
     &__info-item-main-title{
         @extend %bold-font;
-        margin-bottom: 25px;
+        margin: 0 0 25px 0;
         font-size: 20px;
         color: $info-title-txt-color;
         @include xl_devices {
@@ -137,6 +140,7 @@
 
     &__info-item-main-about{
         @extend %regular-font;
+        margin: 0;
         line-height: 27px;
         color: $info-txt-color;
         @include l_devices {

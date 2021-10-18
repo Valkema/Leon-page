@@ -1,3 +1,6 @@
+@import './../template_props';
+@import './../media_mixin';
+
 .about-container {
     display: flex;
     flex-direction: column;
@@ -26,20 +29,20 @@
             top: 39%;
             left: 11%;
             width: 100px;
-         }
-         @include xl_devices {
+        }
+        @include xl_devices {
             top: 39%;
             left: 11%;
             width: 90px;
-         }
-         @include l_devices {
+        }
+        @include l_devices {
             left: 10%;
             width: 75px;
-         }
-         @include m_devices {
+        }
+        @include m_devices {
             left: 8%;
-         }
-         @include s_devices {
+        }
+        @include s_devices {
             display: none;
         }
     }
@@ -54,7 +57,7 @@
             left: 31%;
             width: 170px;
          }
-         @include xl_devices {
+        @include xl_devices {
            top: 42%;
            left: 31%;
            width: 150px;
@@ -150,7 +153,7 @@
         font-size: 20px;
         line-height: 40px;
         color: $primary-txt-color;
-        margin-bottom: 40px;
+        margin: 0 0 40px 0;
         @include xl_devices {
             margin-bottom: 30px;
             line-height: 35px;
@@ -173,6 +176,7 @@
 
     &__info-description {
         @extend %regular-font;
+        margin: 0;
         line-height: 32px;
         color: $basic-txt-color;
         @include l_devices {

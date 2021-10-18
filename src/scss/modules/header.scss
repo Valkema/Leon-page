@@ -1,3 +1,5 @@
+@import './../template_props';
+@import './../media_mixin';
 
 .header-container {
     width: 100%;
@@ -57,6 +59,7 @@
 
     &__subtitle {
         @extend %regular-font;
+        margin: 0;
         font-size: 20px;
         line-height: 32px;
         color: $primary-txt-color;

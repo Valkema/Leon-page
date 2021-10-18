@@ -1,5 +1,6 @@
+@import './constants';
 
-@mixin xxl_devices{
+@mixin xxl_devices {
    @media screen and (max-width: $for-xx-large-devices){
        @content;
    }
